@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:Larpomatic}/swift",
+            "name": "Debug VideoMetadataFetcher (swift)",
+            "program": "${workspaceFolder:Larpomatic}/swift/.build/debug/VideoMetadataFetcher",
+            "preLaunchTask": "swift: Build Debug VideoMetadataFetcher (swift)"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:Larpomatic}/swift",
+            "name": "Release VideoMetadataFetcher (swift)",
+            "program": "${workspaceFolder:Larpomatic}/swift/.build/release/VideoMetadataFetcher",
+            "preLaunchTask": "swift: Build Release VideoMetadataFetcher (swift)"
+        }
+    ]
+}
