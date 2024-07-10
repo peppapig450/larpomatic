@@ -163,6 +163,5 @@ cython_debug/
 *.mov
 *.jpeg
 *.jpeg
-*.HEIC
+
 *.mov
-*.JPG
