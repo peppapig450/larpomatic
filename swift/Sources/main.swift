@@ -9,7 +9,7 @@ func fetchMetadata(from url: URL) async {
             let metadataItems = try await asset.loadMetadata(for: format)
             for item in metadataItems {
                 if let key = item.commonKey?.rawValue {
-                    let value = item.value as? String ?? "N/A"
+                    let value = try await item.load(.value) as? String ?? "N/A"
                     print("Key: \(key), Value: \(value)")
                 }
             }
