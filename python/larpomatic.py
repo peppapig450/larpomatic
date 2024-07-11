@@ -3,6 +3,16 @@ import argparse
 from pprint import pprint
 from pathlib import Path
 from typing import Any
+from exiftool import ExifToolHelper
+
+
+def print_out_metadata(source_path: str, target_path: str):
+    with ExifToolHelper() as et:
+        for d in et.get_metadata(source_path):
+            pprint(d)
+
+        for d in et.get_metadata(target_path):
+            pprint(d)
 
 
 def create_new_metadata(source_metadata: dict, target_metadata: dict):
@@ -61,7 +71,7 @@ def main():
         "--source", "-s", required=True, help="Path to the source image"
     )
     parser.add_argument(
-        "--target", "-t", required=True, help="Path to the target image"
+        "--target", "-t", required=False, help="Path to the target image"
     )
     parser.add_argument(
         "--output", "-o", required=False, help="Path to save the output image"
@@ -69,7 +79,8 @@ def main():
 
     args = parser.parse_args()
 
-    copy_metadata(args.source, args.target)
+    # copy_metadata(args.source, args.target)
+    print_out_metadata(args.source, args.target)
 
 
 if __name__ == "__main__":
