@@ -1,3 +1,5 @@
+from libc.stdint cimport uint8_t
+
 cdef extern from "libheif/heif.h":
     ctypedef struct heif_context:
         pass
